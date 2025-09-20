@@ -1,0 +1,61 @@
+# Archivos ejecutables compilados
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Archivos temporales
+*.tmp
+*.temp
+salida_temp.txt
+
+# Archivos del compilador TCC (muy pesados)
+tcc/
+*.zip
+
+# Archivos de datos temporales
+*temp*.csv
+
+# Logs y archivos de debugging
+*.log
+debug.txt
+
+# Archivos del sistema Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Archivos del sistema macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Directorios de cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de respaldo
+*.bak
+*.backup
+*~
+
+# Archivos de entorno virtual Python
+venv/
+env/
+.venv/
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# MANTENER: Archivos importantes del proyecto
+# *.c (código fuente)
+# *.md (documentación)  
+# *.bat (scripts)
+# *.py (análisis)
+# *.png (gráficos)
+# *.csv (resultados)

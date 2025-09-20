@@ -1,0 +1,46 @@
+===============================================
+🚀 COMANDOS RÁPIDOS - PROYECTO HPC MATRICES
+===============================================
+
+📋 COPIAR Y PEGAR ESTOS COMANDOS:
+
+🔧 COMPILAR:
+.\tcc\tcc.exe -o MatrizSec_hilos_windows.exe MatrizSec_hilos_windows.c
+
+⚡ SPEEDUP MÁXIMO (2.90x):
+.\MatrizSec_hilos_windows.exe 1000 8 5 0
+
+⭐ CONFIGURACIÓN EXCELENTE (2.72x):
+.\MatrizSec_hilos_windows.exe 500 8 5 0
+
+✅ DESARROLLO Y PRUEBAS:
+.\MatrizSec_hilos_windows.exe 100 4 3 1
+
+📊 BENCHMARK AUTOMÁTICO:
+.\ejecutar_benchmark.bat
+
+📈 GENERAR GRÁFICOS:
+python generar_graficos.py
+
+🎯 MOSTRAR RESULTADOS:
+.\mostrar_resultados.bat
+
+===============================================
+📝 SINTAXIS PROGRAMA PRINCIPAL:
+programa <tamaño> <hilos> <iteraciones> <mostrar>
+
+Ejemplos:
+- 500 8 5 0  = 500x500, 8 hilos, 5 iter, no mostrar
+- 100 4 3 1  = 100x100, 4 hilos, 3 iter, mostrar matrices
+
+🏆 MEJORES CONFIGURACIONES COMPROBADAS:
+- 1000×1000 con 8 hilos = 2.90x speedup
+- 500×500 con 8 hilos = 2.72x speedup  
+- 500×500 con 4 hilos = 2.20x speedup
+
+===============================================
+💡 ARCHIVOS CLAVE GENERADOS:
+- analisis_speedup_matrices.png (gráficos)
+- REPORTE_FINAL_HPC.md (análisis completo)
+- resultados_completos.csv (datos)
+===============================================
