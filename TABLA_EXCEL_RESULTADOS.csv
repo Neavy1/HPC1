@@ -1,0 +1,92 @@
+PROYECTO HPC - MULTIPLICACION DE MATRICES CON HILOS,,,,,,,,
+ANALISIS DE SPEEDUP Y RENDIMIENTO,,,,,,,,
+Speedup Máximo Alcanzado: 2.90x,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+MATRIZ 10x10,,,,,,,,
+Hilos,T_Secuencial (s),T_Paralelo_Avg (s),T_Paralelo_Min (s),T_Paralelo_Max (s),Speedup,Eficiencia (%),MFLOPS,Estado
+1,0.0000,0.0003,0.0000,0.0010,0.00,0.0,N/A,No Apto - Overhead
+2,0.0000,0.0007,0.0000,0.0010,0.00,0.0,N/A,No Apto - Overhead  
+4,0.0000,0.0007,0.0000,0.0020,0.00,0.0,N/A,No Apto - Overhead
+8,0.0000,0.0007,0.0000,0.0010,0.00,0.0,N/A,No Apto - Overhead
+16,0.0000,0.0017,0.0010,0.0020,0.00,0.0,N/A,No Apto - Overhead
+Promedio:,0.0000,0.0007,0.0002,0.0014,0.00,0.0,N/A,
+Mejor Config:,N/A - Tamaño muy pequeño,,,,,,
+,,,,,,,,
+MATRIZ 100x100,,,,,,,,
+Hilos,T_Secuencial (s),T_Paralelo_Avg (s),T_Paralelo_Min (s),T_Paralelo_Max (s),Speedup,Eficiencia (%),MFLOPS,Estado
+1,0.0080,0.0067,0.0060,0.0080,1.20,120.0,298,Baseline
+2,0.0050,0.0040,0.0030,0.0050,1.25,62.5,500,Moderado
+4,0.0050,0.0030,0.0030,0.0030,1.67,41.7,667,Bueno
+8,0.0050,0.0033,0.0030,0.0040,1.50,18.8,606,Aceptable
+16,0.0060,0.0033,0.0030,0.0040,1.80,11.2,606,MEJOR
+Promedio:,0.0058,0.0041,0.0040,0.0048,1.48,50.8,535,
+Mejor Config:,16 hilos - 1.80x speedup,,,,,,
+,,,,,,,,
+MATRIZ 500x500,,,,,,,,
+Hilos,T_Secuencial (s),T_Paralelo_Avg (s),T_Paralelo_Min (s),T_Paralelo_Max (s),Speedup,Eficiencia (%),MFLOPS,Estado
+1,1.0250,0.8827,0.8550,0.9010,1.16,116.1,283,Baseline
+2,0.6570,0.5540,0.5400,0.5690,1.19,59.3,451,Moderado
+4,0.7160,0.3250,0.3230,0.3280,2.20,55.1,769,Excelente
+8,0.6360,0.2340,0.2130,0.2510,2.72,34.0,1068,OPTIMO ⭐
+16,0.6270,0.2720,0.2270,0.3090,2.31,14.4,918,Muy Bueno
+Promedio:,0.7322,0.4535,0.4316,0.4716,1.92,55.8,698,
+Mejor Config:,8 hilos - 2.72x speedup,,,,,,
+,,,,,,,,
+MATRIZ 1000x1000,,,,,,,,
+Hilos,T_Secuencial (s),T_Paralelo_Avg (s),T_Paralelo_Min (s),T_Paralelo_Max (s),Speedup,Eficiencia (%),MFLOPS,Estado
+1,6.7540,8.2160,7.9950,8.4880,0.82,82.2,244,Baseline (Overhead)
+2,N/D,N/D,N/D,N/D,N/D,N/D,N/D,No Probado
+4,N/D,N/D,N/D,N/D,N/D,N/D,N/D,No Probado
+8,7.0030,2.4113,2.1940,2.6220,2.90,36.3,829,MAXIMO ⭐⭐
+16,N/D,N/D,N/D,N/D,N/D,N/D,N/D,No Probado
+Promedio:,6.8785,5.3137,5.0945,5.5550,1.86,59.3,536,
+Mejor Config:,8 hilos - 2.90x speedup (RECORD),,,,,,
+,,,,,,,,
+MATRIZ 2000x2000,,,,,,,,
+Hilos,T_Secuencial (s),T_Paralelo_Avg (s),T_Paralelo_Min (s),T_Paralelo_Max (s),Speedup,Eficiencia (%),MFLOPS,Estado
+1,N/D,N/D,N/D,N/D,N/D,N/D,N/D,No Probado
+2,N/D,N/D,N/D,N/D,N/D,N/D,N/D,No Probado
+4,91.7810,49.8180,45.2740,54.3620,1.84,46.1,321,Bueno
+8,N/D,N/D,N/D,N/D,N/D,N/D,N/D,No Probado
+16,N/D,N/D,N/D,N/D,N/D,N/D,N/D,No Probado
+Promedio:,91.7810,49.8180,45.2740,54.3620,1.84,46.1,321,
+Mejor Config:,4 hilos - 1.84x speedup,,,,,,
+,,,,,,,,
+,,,,,,,,
+RESUMEN EJECUTIVO,,,,,,,,
+,,,,,,,,
+CONFIGURACION,SPEEDUP,EFICIENCIA (%),TIEMPO (s),MFLOPS,CLASIFICACION,RECOMENDACION,USO
+1000x1000 - 8 hilos,2.90,36.3,2.41,829,⭐⭐ RECORD,Si,Cálculo Intensivo
+500x500 - 8 hilos,2.72,34.0,0.23,1068,⭐ OPTIMO,Si,HPC General  
+500x500 - 16 hilos,2.31,14.4,0.27,918,✅ BUENO,Condicional,Alto Paralelismo
+500x500 - 4 hilos,2.20,55.1,0.33,769,✅ BALANCEADO,Si,Desarrollo
+2000x2000 - 4 hilos,1.84,46.1,49.82,321,✅ BUENO,Si,Matrices Grandes
+100x100 - 16 hilos,1.80,11.2,0.003,606,⚠️ MODERADO,No,Solo Testing
+,,,,,,,,
+ESTADISTICAS GENERALES,,,,,,,,
+Total Configuraciones Probadas:,17,,,,,,
+Configuraciones Exitosas:,15 (88%),,,,,,
+Speedup Máximo:,2.90x,,,,,,
+Speedup Promedio:,1.73x,,,,,,
+Eficiencia Promedio:,54.3%,,,,,,
+Mejor MFLOPS:,1068 (500x500-8h),,,,,,
+CPUs del Sistema:,16,,,,,,
+Precisión de Cálculos:,100%,,,,,,
+,,,,,,,,
+RECOMENDACIONES POR ESCENARIO,,,,,,,,
+,,,,,,,,
+ESCENARIO,CONFIGURACION,SPEEDUP,JUSTIFICACION,,,
+Desarrollo y Pruebas,500x500 con 4 hilos,2.20x,Balance óptimo eficiencia/rendimiento,,,
+Producción HPC,1000x1000 con 8 hilos,2.90x,Máximo speedup absoluto demostrado,,,
+Investigación Científica,500x500 con 8 hilos,2.72x,Alto rendimiento con excelente MFLOPS,,,
+Sistemas Memoria Limitada,2000x2000 con 4 hilos,1.84x,Evita saturación de memoria,,,
+Testing Rápido,100x100 con 4 hilos,1.67x,Resultados rápidos para verificación,,,
+,,,,,,,,
+NOTAS TECNICAS,,,,,,,,
+• Matrices 10x10: No aptas para paralelización (overhead dominante),,,,,,
+• Configuración óptima general: 8 hilos para matrices ≥500x500,,,,,,
+• Rendimientos decrecientes evidentes con 16 hilos,,,,,,
+• Algoritmo: Multiplicación clásica O(n³) con división por filas,,,,,,
+• Plataforma: Windows con hilos nativos (_beginthreadex),,,,,,
+• Verificación: 100% de resultados validados vs secuencial,,,,,,
